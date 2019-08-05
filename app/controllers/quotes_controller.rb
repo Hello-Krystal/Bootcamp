@@ -9,14 +9,13 @@ class QuotesController < ApplicationController
 
   def create
     Quote.create(quote_params)
-    redirect_to_root_path
+    redirect_to root_path
   end
 
   private
 
   def quote_params
-    params.requite(:quote).permit(:saying, :author)
+    params.require(:quote).permit(:saying, :author)
   end
-
 end
 
